@@ -4,6 +4,7 @@ import cors from 'cors'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import { body, query, validationResult } from 'express-validator'
+import { sequelize} from './model/user'
 const app = express()
 app.use(bodyParser.json())
 app.use(cors())
@@ -69,7 +70,7 @@ app.delete('/reset', (req, res) => {
 
 app.get('/me', (req, res) => {
   return res.status(200).json({
-    message: 'Hi'
+        
   })
   
 })
