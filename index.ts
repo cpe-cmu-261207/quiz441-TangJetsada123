@@ -4,7 +4,6 @@ import cors from 'cors'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import { body, query, validationResult } from 'express-validator'
-
 const app = express()
 app.use(bodyParser.json())
 app.use(cors())
@@ -42,7 +41,7 @@ app.get('/balance',
   
     }
     catch (e) {
-      //response in case of invalid token
+      message:'message: Invalid token'
     }
   })
 
@@ -69,6 +68,9 @@ app.delete('/reset', (req, res) => {
 })
 
 app.get('/me', (req, res) => {
+  return res.status(200).json({
+    message: 'Hi'
+  })
   
 })
 
